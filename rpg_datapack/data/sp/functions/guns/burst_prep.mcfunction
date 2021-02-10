@@ -1,0 +1,1 @@
+execute as @a[tag=burst] at @s run function sp:guns/burst

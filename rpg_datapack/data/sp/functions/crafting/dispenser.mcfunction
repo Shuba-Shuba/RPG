@@ -1,0 +1,3 @@
+data modify storage sp:crafting Items set from block ~ ~ ~ Items
+execute if data storage sp:crafting {Items:[{Slot:3b,id:"minecraft:stone",Count:1b},{Slot:4b,id:"minecraft:stone",Count:1b},{Slot:5b,id:"minecraft:stone",Count:1b}]} run function sp:recipes/diamond_ext
+execute if data storage sp:crafting {Items:[{Slot:0b,id:"minecraft:diamond",Count:1b},{Slot:1b,id:"minecraft:diamond",Count:1b},{Slot:2b,id:"minecraft:diamond",Count:1b},{Slot:3b,id:"minecraft:diamond",Count:1b},{Slot:5b,id:"minecraft:diamond",Count:1b},{Slot:6b,id:"minecraft:diamond",Count:1b},{Slot:7b,id:"minecraft:diamond",Count:1b},{Slot:8b,id:"minecraft:diamond",Count:1b}]} run function sp:recipes/zombie

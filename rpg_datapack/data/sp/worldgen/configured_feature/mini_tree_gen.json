@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:decorated",
+  "config": {
+    "decorator": {
+      "type": "minecraft:square",
+      "config": {}
+    },
+    "feature": "sp:mini_tree"
+  }
+}

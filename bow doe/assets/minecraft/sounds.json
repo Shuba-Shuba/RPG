@@ -1,0 +1,8 @@
+{
+	"guns.hit": {
+		"subtitle": "360 NOSCOPE",
+		"sounds": [
+			"minecraft:hit"
+		]
+	}
+}

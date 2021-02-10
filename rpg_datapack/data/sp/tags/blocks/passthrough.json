@@ -1,0 +1,13 @@
+{
+	"values":[
+		"minecraft:air",
+		"minecraft:water",
+		"minecraft:lava",
+		"#minecraft:buttons",
+		"#minecraft:pressure_plates",
+		"minecraft:cave_air",
+		"minecraft:grass",
+		"minecraft:tall_grass",
+		"minecraft:ladder"
+	]
+}
