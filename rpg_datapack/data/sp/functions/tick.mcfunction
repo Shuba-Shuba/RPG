@@ -21,7 +21,7 @@ execute store result bossbar rpg:the_epic_one value run data get entity @e[type=
 execute store result score boss.health epic_boss_info run data get entity @e[type=zombie,tag=boss,limit=1] Health
 execute if entity @e[type=zombie,tag=boss,limit=1] run bossbar set rpg:the_epic_one visible true
 execute unless entity @e[type=zombie,tag=boss,limit=1] run bossbar set rpg:the_epic_one visible false
-execute as @e[type=zombie,tag=boss,limit=1] at @s unless entity @a[distance=..64] run tp @s 0 -100 0
+execute as @e[type=zombie,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
 
 # custom crafting recipes
 execute as @a store success score @s crafted run clear @s knowledge_book
@@ -47,7 +47,7 @@ bossbar set rpg:tower players @a
 execute store result bossbar rpg:tower value run data get entity @e[type=skeleton,tag=tower,limit=1] Health
 execute if entity @e[type=skeleton,tag=tower,limit=1] run bossbar set rpg:tower visible true
 execute unless entity @e[type=skeleton,tag=tower,limit=1] run bossbar set rpg:tower visible false
-execute as @e[type=skeleton,tag=tower,limit=1] at @s unless entity @a[distance=..64] run tp @s 0 -100 0
+execute as @e[type=skeleton,tag=tower,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
 scoreboard players add %15s rpg_time 1
 execute if score %15s rpg_time matches 200.. run function sp:15s
 execute if score %15s rpg_time matches 200.. run scoreboard players set %15s rpg_time 0
@@ -87,6 +87,7 @@ scoreboard players remove @a[scores={pistol_cd=1..}] pistol_cd 1
 scoreboard players remove @a[scores={shotgun_cd=1..}] shotgun_cd 1
 scoreboard players remove @a[scores={rocket_cd=1..}] rocket_cd 1
 scoreboard players remove @a[scores={sniper_cd=1..}] sniper_cd 1
+scoreboard players remove @a[scores={arrow_cd=1..}] arrow_cd 1
 
 # sniper rifle
 execute as @a[scores={drop_sniper=1..},predicate=sp:is_sneaking] at @s anchored eyes run function sp:guns/sniper

@@ -43,7 +43,7 @@ scoreboard objectives add manacooldown dummy
 scoreboard objectives add evoker dummy
 scoreboard objectives add evoker_init dummy
 scoreboard objectives add manacap dummy
-execute in minecraft:overworld run forceload add 0 0
+execute in sp:void run forceload add 0 0
 scoreboard objectives add ar_cooldown dummy
 scoreboard objectives add damage dummy
 scoreboard objectives add health health
@@ -64,3 +64,4 @@ scoreboard players add gungame.infinite_ammo config 0
 scoreboard players add cleargive.enabled config 0
 scoreboard objectives add gungame_kill playerKillCount
 scoreboard objectives add hit_cooldown dummy
+scoreboard objectives add arrow_cd dummy

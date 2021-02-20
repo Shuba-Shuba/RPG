@@ -15,6 +15,7 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11004}}} unless sc
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11005}}} if score @s rocket_cd matches 1.. run title @s actionbar ["Weapon on cooldown! Please wait ",{"score":{"name":"@s","objective":"rocket_cd"}}," ticks."]
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11005}}} unless score @s rocket_cd matches 1.. run function sp:guns/rocket
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11007}}} run function sp:guns/minigun
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11006}}} unless score @s arrow_cd matches 1.. run function sp:guns/archers_bane
 
 # fireball wand
 execute if data entity @s {SelectedItem:{id:"minecraft:fire_charge"}} run function sp:abilities/launch

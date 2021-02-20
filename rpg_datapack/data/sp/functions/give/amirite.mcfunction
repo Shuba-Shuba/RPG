@@ -1,0 +1,1 @@
+give @s copper_ingot{CustomModelData:101,display:{Name:'{"text":"Amirite Ingot","italic":false}'}}
