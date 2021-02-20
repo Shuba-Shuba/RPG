@@ -14,7 +14,7 @@ execute if score @s recipe matches 1 run give @s stick{display:{Name:'{"text":"F
 execute if score @s recipe matches 1 run scoreboard players set @s recipe 2
 
 execute store success score @s recipe unless score @s recipe matches 2 run recipe take @s sp:dispenser
-execute if score @s recipe matches 1 run give @s evoker_spawn_egg{display:{Name:'{"text":"Crafting Station","italic":false}',Lore:['{"text":"Spawns a crafting station"}']},CraftRPG:1b,EntityTag:{id:"minecraft:armor_stand",CustomNameVisible:1b,NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,Tags:["dispenser_craft"],CustomName:'{"text":"Crafting Station"}'}}
+execute if score @s recipe matches 1 run give @s evoker_spawn_egg{display:{Name:'{"text":"Crafting Station","italic":false}',Lore:['{"text":"Spawns a crafting station"}']},EntityTag:{id:"minecraft:armor_stand",NoGravity:1b,Marker:1b,Invisible:1b,Tags:["dispenser_craft"]}} 1
 execute if score @s recipe matches 1 run scoreboard players set @s recipe 2
 
 # if no recipes have been found
