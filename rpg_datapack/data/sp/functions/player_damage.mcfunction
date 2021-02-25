@@ -64,8 +64,6 @@ execute if score tmp.calc damage matches 1 run attribute @s minecraft:generic.ma
 
 # inflict damage
 execute at @s run playsound minecraft:entity.player.hurt player @a[distance=..16]
-title @s actionbar "*HIT*"
-schedule function sp:clear_actionbar 10t
 effect give @s minecraft:health_boost 1 255 true
 effect clear @s minecraft:health_boost
 scoreboard players set @s damage 0
@@ -81,8 +79,3 @@ attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-6
 attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-7
 attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-8
 attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-9
-attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-10
-execute if score @s health matches 10.. run tag @s add instant_damage
-execute if score @s health matches 10.. run effect give @s instant_damage 1 0 true
-execute if entity @s[tag=instant_damage] run effect give @s instant_health 1 0 true
-execute if entity @s[tag=instant_damage] run tag @s remove instant_damage

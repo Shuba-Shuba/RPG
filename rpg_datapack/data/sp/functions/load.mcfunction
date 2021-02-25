@@ -1,3 +1,4 @@
+tellraw @a "Reloaded."
 scoreboard objectives add rpg_time dummy
 scoreboard objectives add epic_boss_info dummy
 bossbar add rpg:the_epic_one "The Epic One"
@@ -65,3 +66,38 @@ scoreboard players add cleargive.enabled config 0
 scoreboard objectives add gungame_kill playerKillCount
 scoreboard objectives add hit_cooldown dummy
 scoreboard objectives add arrow_cd dummy
+scoreboard objectives add armor armor
+scoreboard objectives add armor_display trigger
+scoreboard objectives add armor_toggle dummy
+scoreboard objectives add max_health dummy
+scoreboard objectives add health_att dummy
+scoreboard objectives add health_att1 dummy
+scoreboard objectives add health_att2 dummy
+scoreboard objectives add health_att3 dummy
+scoreboard objectives add health_att4 dummy
+scoreboard objectives add health_att5 dummy
+scoreboard objectives add ranged_atk dummy
+scoreboard objectives add magic_atk dummy
+scoreboard objectives add melee_atk dummy
+scoreboard objectives add ranged_atk1 dummy
+scoreboard objectives add ranged_atk2 dummy
+scoreboard objectives add ranged_atk3 dummy
+scoreboard objectives add ranged_atk4 dummy
+scoreboard objectives add ranged_atk5 dummy
+scoreboard objectives add ranged_perm dummy
+scoreboard objectives add magic_atk1 dummy
+scoreboard objectives add magic_atk2 dummy
+scoreboard objectives add magic_atk3 dummy
+scoreboard objectives add magic_atk4 dummy
+scoreboard objectives add magic_atk5 dummy
+scoreboard objectives add magic_perm dummy
+scoreboard objectives add melee_atk1 dummy
+scoreboard objectives add melee_atk2 dummy
+scoreboard objectives add melee_atk3 dummy
+scoreboard objectives add melee_atk4 dummy
+scoreboard objectives add melee_atk5 dummy
+scoreboard objectives add melee_perm dummy
+bossbar add rpg:evoker "The Illager Summoner"
+bossbar set rpg:evoker max 100
+bossbar set rpg:evoker color red
+bossbar set rpg:evoker visible false

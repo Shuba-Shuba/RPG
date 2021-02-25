@@ -39,6 +39,12 @@
                 "custom_model_data" : 11007
             },
             "model": "item/minigun"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11008
+            },
+            "model": "item/evoker_tome"
         }
     ]
 }

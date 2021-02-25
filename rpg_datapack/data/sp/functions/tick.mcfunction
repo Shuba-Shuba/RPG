@@ -10,6 +10,16 @@ execute as @a[scores={carrot_stick=2..}] run function sp:offhand_check
 execute if score gungame.enabled config matches 1 run function sp:gungame/tick
 execute as @e[tag=slowcast_4] at @s run function sp:slowcast/tick
 scoreboard players remove @a hit_cooldown 1
+execute as @a store result score @s max_health run attribute @s generic.max_health get
+
+# accessories
+execute as @a run function sp:acc/health
+execute as @a run function sp:acc/ranged
+
+# display armor if >20
+scoreboard players enable @a armor_display
+execute as @a[scores={armor_toggle=1}] run function sp:armor
+execute as @a[scores={armor_display=1..}] run function sp:armor_toggle
 
 # the epic one (first boss)
 scoreboard players add %5s rpg_time 1
@@ -54,6 +64,13 @@ execute if score %15s rpg_time matches 200.. run scoreboard players set %15s rpg
 scoreboard players add %1s rpg_time 1
 execute if score %1s rpg_time matches 20.. run function sp:1s
 execute if score %1s rpg_time matches 20.. run scoreboard players set %1s rpg_time 0
+
+# army of skeletons (second boss)
+bossbar set rpg:evoker players @a
+execute store result bossbar rpg:evoker value run data get entity @e[type=evoker,tag=boss,limit=1] Health
+execute if entity @e[type=evoker,tag=boss,limit=1] run bossbar set rpg:evoker visible true
+execute unless entity @e[type=evoker,tag=boss,limit=1] run bossbar set rpg:evoker visible false
+execute as @e[type=evoker,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
 
 # arch polar bear spawning
 execute as @e[type=polar_bear,tag=!rpg_verified,tag=!arch_polar_bear] at @s run function sp:verify/polar_bear

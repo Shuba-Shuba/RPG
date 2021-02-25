@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{CustomModelData:11008,EvokerRPG:5}"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                {
+                  "text": "\"They'll never know what ate them\"",
+                  "color": "gray"
+                },
+                {
+                  "text": "6 Piercing Damage",
+                  "color": "white",
+                  "italic": false
+                },
+                {
+                  "text": "Uses 15 Mana",
+                  "color": "white",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": {
+                "text": "Evoker Fangs",
+                "italic": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

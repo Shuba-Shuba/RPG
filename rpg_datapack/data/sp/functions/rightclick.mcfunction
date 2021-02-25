@@ -14,8 +14,8 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11003}}} unless sc
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11004}}} unless score @s shotgun_cd matches 1.. run function sp:guns/shotgun
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11005}}} if score @s rocket_cd matches 1.. run title @s actionbar ["Weapon on cooldown! Please wait ",{"score":{"name":"@s","objective":"rocket_cd"}}," ticks."]
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11005}}} unless score @s rocket_cd matches 1.. run function sp:guns/rocket
-execute if data entity @s {SelectedItem:{tag:{CustomModelData:11007}}} run function sp:guns/minigun
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11006}}} unless score @s arrow_cd matches 1.. run function sp:guns/archers_bane
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11007}}} run function sp:guns/minigun
 
 # fireball wand
 execute if data entity @s {SelectedItem:{id:"minecraft:fire_charge"}} run function sp:abilities/launch
@@ -23,9 +23,10 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11002}}} if score 
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11002}}} if score @s mana matches 24.. run playsound minecraft:entity.blaze.shoot master @a ~ ~ ~ 0.5 1
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11002}}} if score @s mana matches 24.. run xp add @s -24 points
 
-# mana modifier items
+# permanent consumable items
 execute if data entity @s SelectedItem.tag.ManaRPG run function sp:mana/get
 execute if data entity @s SelectedItem.tag.ManaRelativeRPG if score @s manacooldown matches 1..100 run function sp:mana/get
+execute if data entity @s SelectedItem.tag.RangedPermRPG run function sp:boost/ranged
 
 # evoker fangs
 execute store result score @s evoker_init run data get entity @s SelectedItem.tag.EvokerRPG

@@ -1,0 +1,1 @@
+title @s actionbar [{"text":"Armor: ","color":"aqua"},{"score":{"name":"*","objective":"armor"}}," 🛡        ",{"text":"Health: ","color":"red"},{"score":{"name":"*","objective":"health"},"color":"red"},{"text":"/","color":"red"},{"score":{"name":"*","objective":"max_health"},"color":"red"},{"text":" ½❤","color":"red"}]

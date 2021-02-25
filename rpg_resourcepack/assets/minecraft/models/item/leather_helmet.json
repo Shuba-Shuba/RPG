@@ -1,0 +1,20 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/leather_helmet"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "custom_model_data" : 101
+            },
+            "model": "item/amirite_helmet"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 102
+            },
+            "model": "item/enderite_helmet"
+        }
+    ]
+}
