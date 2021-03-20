@@ -1,7 +1,7 @@
 tag @s remove burst
 
 # custom range values
-scoreboard players set @s[tag=minigun] raycast 64
+scoreboard players set @s[tag=minigun] raycast 96
 
 execute store result score @s ammo run clear @s iron_nugget 0
 execute if score @s ammo matches 1.. unless score gungame.infinite_ammo config matches 1 run clear @s iron_nugget 1

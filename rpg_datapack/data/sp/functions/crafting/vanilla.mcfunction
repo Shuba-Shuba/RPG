@@ -9,10 +9,6 @@ execute store success score @s recipe unless score @s recipe matches 2 run recip
 execute if score @s recipe matches 1 run give @s wither_rose{display:{Name:'{"text":"Mana Flower","color":"light_purple","italic":false}',Lore:['{"text":"Generates mana every 16 ticks after consumption"}']},ManaRPG:16}
 execute if score @s recipe matches 1 run scoreboard players set @s recipe 2
 
-execute store success score @s recipe unless score @s recipe matches 2 run recipe take @s sp:fireball_wand
-execute if score @s recipe matches 1 run give @s stick{display:{Name:'{"text":"Fireball Wand","color":"aqua","italic":false}',Lore:['{"text":"12 Magic Damage","color":"white","italic":false}','{"text":"Uses 24 Mana","color":"white","italic":false}','{"text":"Shoots a fireball","color":"gray","italic":true}']},CustomModelData:11002}
-execute if score @s recipe matches 1 run scoreboard players set @s recipe 2
-
 execute store success score @s recipe unless score @s recipe matches 2 run recipe take @s sp:dispenser
 execute if score @s recipe matches 1 run give @s evoker_spawn_egg{display:{Name:'{"text":"Crafting Station","italic":false}',Lore:['{"text":"Spawns a crafting station"}']},EntityTag:{id:"minecraft:armor_stand",NoGravity:1b,Marker:1b,Invisible:1b,Tags:["dispenser_craft"]}} 1
 execute if score @s recipe matches 1 run scoreboard players set @s recipe 2

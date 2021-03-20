@@ -91,7 +91,7 @@ execute as @a[scores={manacooldown=1..100}] if score @s manatime >= @s manacoold
 
 # mana cap
 scoreboard players add @a manacap 0
-scoreboard players set @a[scores={manacap=0}] manacap 112
+scoreboard players set @a[scores={manacap=0}] manacap 120
 execute as @a if score @s mana > @s manacap run xp add @s -1
 
 # sky dimension

@@ -27,6 +27,10 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11002}}} if score 
 execute if data entity @s SelectedItem.tag.ManaRPG run function sp:mana/get
 execute if data entity @s SelectedItem.tag.ManaRelativeRPG if score @s manacooldown matches 1..100 run function sp:mana/get
 execute if data entity @s SelectedItem.tag.RangedPermRPG run function sp:boost/ranged
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} store success score @s speed run attribute @s minecraft:generic.movement_speed modifier add b9611b23-9fed-4331-9d8b-a654cab9bbfa speed_booster 0.02 add
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} if score @s speed matches 1.. run tellraw @s "Boosted your movement speed. This effect is not reversible.\n\nFor admins: The UUID of the attribute modifier is [ b9611b23-9fed-4331-9d8b-a654cab9bbfa ]. It is not randomly generated on the spot, but it is hardcoded in the datapack to be that exact UUID. You can copy the UUID from your logs, or by looking at the function files."
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} if score @s speed matches 1.. run item entity @s weapon.mainhand replace air
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} if score @s speed matches 0 run tellraw @s "You already have this movement speed boost!"
 
 # evoker fangs
 execute store result score @s evoker_init run data get entity @s SelectedItem.tag.EvokerRPG

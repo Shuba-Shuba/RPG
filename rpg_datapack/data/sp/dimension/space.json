@@ -1,0 +1,27 @@
+{
+  "type": "sp:space",
+  "generator": {
+    "type": "minecraft:flat",
+    "seed": -1162200976,
+    "settings": {
+      "biome": "sp:space",
+      "lakes": false,
+      "features": true,
+      "layers": [
+        {
+          "block": "minecraft:air",
+          "height": 16
+        }
+      ],
+      "structures": {
+        "structures": {
+          "minecraft:village": {
+            "spacing": 24,
+            "separation": 12,
+            "salt": 0
+          }
+        }
+      }
+    }
+  }
+}

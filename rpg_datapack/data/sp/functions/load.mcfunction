@@ -1,4 +1,13 @@
+# config setup
+scoreboard players add gungame.enabled config 0
+scoreboard players add gungame.infinite_ammo config 0
+scoreboard players add cleargive.enabled config 0
+scoreboard players add upgrade.protection config 0
+scoreboard players add upgrade.thorns config 0
+scoreboard players add generic.used config 0
+
 tellraw @a "Reloaded."
+execute unless score generic.used config matches 1 run tellraw @a [{"text":"It looks like this is your first time loading this datapack. To properly set up RPG, "},{"text":"click here.","underlined":true,"clickEvent":{"action":"run_command","value":"/function sp:reset_config"},"hoverEvent":{"action":"show_text","value":"/function sp:reset_config"}}," If you know what you are doing, then ignore this message."]
 scoreboard objectives add rpg_time dummy
 scoreboard objectives add epic_boss_info dummy
 bossbar add rpg:the_epic_one "The Epic One"
@@ -60,9 +69,6 @@ scoreboard objectives add combo dummy
 scoreboard objectives add tier dummy
 scoreboard objectives add kill dummy
 scoreboard objectives add config dummy
-scoreboard players add gungame.enabled config 0
-scoreboard players add gungame.infinite_ammo config 0
-scoreboard players add cleargive.enabled config 0
 scoreboard objectives add gungame_kill playerKillCount
 scoreboard objectives add hit_cooldown dummy
 scoreboard objectives add arrow_cd dummy
@@ -101,3 +107,4 @@ bossbar add rpg:evoker "The Illager Summoner"
 bossbar set rpg:evoker max 100
 bossbar set rpg:evoker color red
 bossbar set rpg:evoker visible false
+scoreboard objectives add speed dummy
