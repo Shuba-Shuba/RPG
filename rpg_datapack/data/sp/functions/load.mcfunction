@@ -108,3 +108,11 @@ bossbar set rpg:evoker max 100
 bossbar set rpg:evoker color red
 bossbar set rpg:evoker visible false
 scoreboard objectives add speed dummy
+scoreboard objectives add bounce dummy
+scoreboard objectives add musket_cd dummy
+scoreboard objectives add tmp_raycast dummy
+scoreboard objectives add UUID0 dummy
+scoreboard objectives add UUID1 dummy
+scoreboard objectives add UUID2 dummy
+scoreboard objectives add UUID3 dummy
+scoreboard objectives add hit dummy

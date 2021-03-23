@@ -8,6 +8,8 @@
 		"minecraft:cave_air",
 		"minecraft:grass",
 		"minecraft:tall_grass",
-		"minecraft:ladder"
+		"minecraft:ladder",
+		"#minecraft:flowers",
+		"minecraft:vine"
 	]
 }

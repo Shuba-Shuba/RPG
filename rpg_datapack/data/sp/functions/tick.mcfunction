@@ -11,6 +11,11 @@ execute if score gungame.enabled config matches 1 run function sp:gungame/tick
 execute as @e[tag=slowcast_4] at @s run function sp:slowcast/tick
 scoreboard players remove @a hit_cooldown 1
 execute as @a store result score @s max_health run attribute @s generic.max_health get
+execute as @a store result score @s UUID0 run data get entity @s UUID[0]
+execute as @a store result score @s UUID1 run data get entity @s UUID[1]
+execute as @a store result score @s UUID2 run data get entity @s UUID[2]
+execute as @a store result score @s UUID3 run data get entity @s UUID[3]
+function sp:slowcast/tick
 
 # accessories
 execute as @a run function sp:acc/health
@@ -105,6 +110,7 @@ scoreboard players remove @a[scores={shotgun_cd=1..}] shotgun_cd 1
 scoreboard players remove @a[scores={rocket_cd=1..}] rocket_cd 1
 scoreboard players remove @a[scores={sniper_cd=1..}] sniper_cd 1
 scoreboard players remove @a[scores={arrow_cd=1..}] arrow_cd 1
+scoreboard players remove @a[scores={musket_cd=1..}] musket_cd 1
 
 # sniper rifle
 execute as @a[scores={drop_sniper=1..},predicate=sp:is_sneaking] at @s anchored eyes run function sp:guns/sniper

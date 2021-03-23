@@ -1,5 +1,6 @@
-tag @s add this
-scoreboard players remove @s raycast 1
-execute if score @s raycast matches 1.. at @s run tp ^ ^ ^0.2
-execute as @e[dx=0,tag=!this] positioned ~-0.99 ~-0.99 ~-0.99 if entity @s[dx=0] positioned ~0.99 ~0.99 ~0.99 unless score @s hit_cooldown matches 1.. run function sp:slowcast/hit
-tag @s remove this
+scoreboard players add @e hit 0
+execute as @e[type=area_effect_cloud,tag=bounce] at @s if score @s raycast matches 1.. rotated ~ ~0.2 positioned ^ ^ ^0.25 if block ~ ~ ~ #sp:passthrough run scoreboard players set @s tmp_raycast 8
+execute as @e[type=area_effect_cloud,tag=bounce] at @s if score @s raycast matches 1.. rotated ~ ~0.2 positioned ^ ^ ^0.25 if block ~ ~ ~ #sp:passthrough run function sp:raycast/musket
+scoreboard players remove @e[scores={hit=1..}] hit 1
+execute unless entity @e[type=area_effect_cloud,tag=bounce] run scoreboard players reset * raycast
+execute unless entity @e[type=area_effect_cloud,tag=bounce] run scoreboard players reset * tmp_raycast

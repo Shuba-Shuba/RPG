@@ -51,6 +51,48 @@
                 "custom_model_data" : 11008
             },
             "model": "item/evoker_tome"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11009
+            },
+            "model": "item/prot_boost"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11010
+            },
+            "model": "item/thorns_boost"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11011
+            },
+            "model": "item/speed_boost"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11012
+            },
+            "model": "item/gunners_guide"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11013
+            },
+            "model": "item/soldiers_guide"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11014
+            },
+            "model": "item/hitmans_guide"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11015
+            },
+            "model": "item/musket"
         }
     ]
 }
