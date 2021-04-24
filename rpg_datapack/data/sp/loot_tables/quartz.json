@@ -20,7 +20,7 @@
           "functions": [
             {
               "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:11004}"
+              "tag": "{CustomModelData:11004,DamageRPG:6}"
             },
             {
               "function": "minecraft:set_lore",

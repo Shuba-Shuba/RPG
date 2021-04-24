@@ -1,0 +1,1 @@
+give @s stick{display:{Name:'{"text":"Army Of Skeletons","color":"white","italic":false}',Lore:['{"text":"Summons an army of skeletons","color":"white","italic":false}','{"text":"\\"He\'s served in the military for 75 years.","color":"gray"}','{"text":"He literally lost his skin and is still alive.\\"","color":"gray"}']},CustomModelData:11018} 1

@@ -7,7 +7,7 @@ execute if score @s ammo matches 1.. anchored eyes run summon area_effect_cloud 
 execute if score @s ammo matches 1.. anchored eyes run tp @e[type=area_effect_cloud,tag=bounce,tag=init] ~ ~ ~ ~ ~
 execute if score @s ammo matches 1.. run scoreboard players set @e[type=area_effect_cloud,tag=bounce,tag=init] raycast 512
 execute if score @s ammo matches 1.. run scoreboard players set @s musket_cd 20
-execute if score @s ammo matches 1.. run scoreboard players set @e[type=area_effect_cloud,tag=bounce,tag=init] bounce 10
+execute if score @s ammo matches 1.. run scoreboard players set @e[type=area_effect_cloud,tag=bounce,tag=init] bounce 4
 execute if score @s ammo matches 1.. as @e[type=area_effect_cloud,tag=bounce,tag=init] run scoreboard players operation @s UUID0 = @p[tag=user] UUID0
 execute if score @s ammo matches 1.. as @e[type=area_effect_cloud,tag=bounce,tag=init] run scoreboard players operation @s UUID1 = @p[tag=user] UUID1
 execute if score @s ammo matches 1.. as @e[type=area_effect_cloud,tag=bounce,tag=init] run scoreboard players operation @s UUID2 = @p[tag=user] UUID2

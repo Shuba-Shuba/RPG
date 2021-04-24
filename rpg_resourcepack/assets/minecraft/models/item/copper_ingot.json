@@ -15,6 +15,12 @@
                 "custom_model_data" : 102
             },
             "model": "item/enderite"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 103
+            },
+            "model": "item/enderite_piece"
         }
     ]
 }

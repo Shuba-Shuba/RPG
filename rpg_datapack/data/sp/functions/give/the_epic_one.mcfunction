@@ -1,0 +1,1 @@
+give @s stick{display:{Name:'{"text":"The Epic One","color":"white","italic":false}',Lore:['{"text":"Summons the epic one","color":"white","italic":false}','{"text":"\\"Leader of the zombies\\"","color":"gray"}']},CustomModelData:11017} 1

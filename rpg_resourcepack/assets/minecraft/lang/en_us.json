@@ -93,5 +93,12 @@
 	"deathScreen.score": "Score",
 	"deathScreen.title.hardcore": "LMAO GET BANNED",
 	"deathScreen.title": "ur bad",
-	"deathScreen.quit.confirm": "Are you sure you want to rage quit?"
+	"deathScreen.quit.confirm": "Are you sure you want to rage quit?",
+	"key.swapOffhand": "Quick Trash (Offhand Swap)",
+	"book.finalizeWarning": "Note! When you sign the book, you will be bad.",
+	"book.generation.0": "Original",
+	"book.generation.1": "Copy Doe",
+	"book.generation.2": "Plagiarized",
+	"book.generation.3": "REALLY Plagiarized",
+	"block.minecraft.bed.not_safe": "You may not rest now; there are hot singles in your area."
 }

@@ -1,0 +1,1 @@
+give @s stick{display:{Name:'{"text":"Amirite Boss","color":"white","italic":false}',Lore:['{"text":"Summons the funny","color":"white","italic":false}','{"text":"\\"Amirite gamers???\\"","color":"gray"}']},CustomModelData:11024} 1

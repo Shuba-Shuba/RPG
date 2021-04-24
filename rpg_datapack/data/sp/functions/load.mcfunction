@@ -35,6 +35,8 @@ scoreboard players set integers.10 calc 10
 scoreboard players set integers.4 calc 4
 scoreboard players set integers.3 calc 3
 scoreboard players set integers.2 calc 2
+scoreboard players set integers.1 calc 1
+scoreboard players set damage.min calc 1
 scoreboard objectives add atk dummy
 scoreboard objectives add bow dummy
 scoreboard objectives add arrow dummy
@@ -116,3 +118,14 @@ scoreboard objectives add UUID1 dummy
 scoreboard objectives add UUID2 dummy
 scoreboard objectives add UUID3 dummy
 scoreboard objectives add hit dummy
+scoreboard objectives add ender_cd dummy
+scoreboard objectives add rotation dummy
+scoreboard objectives add axe_damage dummy
+scoreboard objectives add axe_cd dummy
+scoreboard objectives add tower_boss_info dummy
+bossbar add rpg:piglin "Ruler Of The Piglins"
+bossbar set rpg:piglin max 100
+bossbar set rpg:piglin color red
+bossbar set rpg:piglin visible false
+scoreboard objectives add dash_charge dummy
+scoreboard objectives add shieldtime dummy

@@ -11,4 +11,4 @@ scoreboard players set %3 prng2 131071
 scoreboard players set %3 prng3 131071
 scoreboard players set %4 prng1 4
 scoreboard players set %4 prng2 10
-scoreboard players set %4 prng3 10
+scoreboard players set %4 prng3 100

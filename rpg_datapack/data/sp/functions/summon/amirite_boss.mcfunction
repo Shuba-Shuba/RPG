@@ -1,0 +1,1 @@
+summon zombie ~ ~ ~ {CustomNameVisible:1b,CustomName:'"Amirite Boss Placeholder"',Attributes:[{Name:"generic.max_health",Base:100}],Health:100f,DeathLootTable:"sp:amirite_boss"}

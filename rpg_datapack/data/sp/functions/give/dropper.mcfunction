@@ -1,0 +1,1 @@
+give @s evoker_spawn_egg{display:{Name:'{"text":"Enderite Crafting Station","italic":false}',Lore:['{"text":"Spawns an enderite crafting station"}']},EntityTag:{id:"minecraft:armor_stand",NoGravity:1b,Marker:1b,Invisible:1b,Tags:["dropper_craft"]}} 1

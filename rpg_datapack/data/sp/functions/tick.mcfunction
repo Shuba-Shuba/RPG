@@ -1,4 +1,5 @@
-execute as @a[scores={dashtime=1..}] at @s rotated ~ 0 run function sp:abilities/dash
+execute as @e[scores={dashtime=1..}] at @s rotated ~ 0 if block ^ ^ ^1 #sp:passthrough if block ^ ^ ^2 #sp:passthrough if block ^ ^ ^3 #sp:passthrough run function sp:abilities/dash
+execute as @e[scores={dashtime=1..}] at @s rotated ~ 0 unless block ^ ^ ^1 #sp:passthrough unless block ^ ^ ^2 #sp:passthrough unless block ^ ^ ^3 #sp:passthrough run scoreboard players set @s dashtime 0
 execute as @a[predicate=!sp:carrot_on_a_stick_in_offhand] at @s run function sp:offhand_check
 execute as @a[scores={rightclick=1..}] at @s run function sp:rightclick
 scoreboard players add @a dashtime 0
@@ -21,7 +22,7 @@ function sp:slowcast/tick
 execute as @a run function sp:acc/health
 execute as @a run function sp:acc/ranged
 
-# display armor if >20
+# display armor
 scoreboard players enable @a armor_display
 execute as @a[scores={armor_toggle=1}] run function sp:armor
 execute as @a[scores={armor_display=1..}] run function sp:armor_toggle
@@ -37,11 +38,13 @@ execute store result score boss.health epic_boss_info run data get entity @e[typ
 execute if entity @e[type=zombie,tag=boss,limit=1] run bossbar set rpg:the_epic_one visible true
 execute unless entity @e[type=zombie,tag=boss,limit=1] run bossbar set rpg:the_epic_one visible false
 execute as @e[type=zombie,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
+execute as @e[type=zombie,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run kill @s
 
 # custom crafting recipes
 execute as @a store success score @s crafted run clear @s knowledge_book
 execute as @a[scores={crafted=1..}] at @s run function sp:crafting/vanilla
 execute as @e[type=armor_stand,tag=dispenser_craft] at @s if entity @a[distance=..10] run function sp:crafting/dispenser
+execute as @e[type=armor_stand,tag=dropper_craft] at @s if entity @a[distance=..10] run function sp:crafting/dropper
 
 # tree cutter
 execute as @a run function sp:combine
@@ -63,6 +66,7 @@ execute store result bossbar rpg:tower value run data get entity @e[type=skeleto
 execute if entity @e[type=skeleton,tag=tower,limit=1] run bossbar set rpg:tower visible true
 execute unless entity @e[type=skeleton,tag=tower,limit=1] run bossbar set rpg:tower visible false
 execute as @e[type=skeleton,tag=tower,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
+execute as @e[type=skeleton,tag=tower,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run kill @s
 scoreboard players add %15s rpg_time 1
 execute if score %15s rpg_time matches 200.. run function sp:15s
 execute if score %15s rpg_time matches 200.. run scoreboard players set %15s rpg_time 0
@@ -70,12 +74,27 @@ scoreboard players add %1s rpg_time 1
 execute if score %1s rpg_time matches 20.. run function sp:1s
 execute if score %1s rpg_time matches 20.. run scoreboard players set %1s rpg_time 0
 
-# army of skeletons (second boss)
+# illager summoner (third boss)
 bossbar set rpg:evoker players @a
 execute store result bossbar rpg:evoker value run data get entity @e[type=evoker,tag=boss,limit=1] Health
 execute if entity @e[type=evoker,tag=boss,limit=1] run bossbar set rpg:evoker visible true
 execute unless entity @e[type=evoker,tag=boss,limit=1] run bossbar set rpg:evoker visible false
 execute as @e[type=evoker,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
+execute as @e[type=evoker,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run kill @s
+
+# ruler of the piglins (fourth boss)
+bossbar set rpg:piglin players @a
+execute store result bossbar rpg:piglin value run data get entity @e[type=piglin_brute,tag=boss,limit=1] Health
+execute if entity @e[type=piglin_brute,tag=boss,limit=1] run bossbar set rpg:piglin visible true
+execute unless entity @e[type=piglin_brute,tag=boss,limit=1] run bossbar set rpg:piglin visible false
+execute as @e[type=piglin_brute,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
+execute as @e[type=piglin_brute,tag=boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run kill @s
+scoreboard players add %30s rpg_time 1
+execute if score %30s rpg_time matches 400.. run function sp:30s
+execute if score %30s rpg_time matches 400.. run scoreboard players set %30s rpg_time 0
+scoreboard players add %60s rpg_time 1
+execute if score %60s rpg_time matches 800.. run function sp:60s
+execute if score %60s rpg_time matches 800.. run scoreboard players set %60s rpg_time 0
 
 # arch polar bear spawning
 execute as @e[type=polar_bear,tag=!rpg_verified,tag=!arch_polar_bear] at @s run function sp:verify/polar_bear
@@ -111,6 +130,8 @@ scoreboard players remove @a[scores={rocket_cd=1..}] rocket_cd 1
 scoreboard players remove @a[scores={sniper_cd=1..}] sniper_cd 1
 scoreboard players remove @a[scores={arrow_cd=1..}] arrow_cd 1
 scoreboard players remove @a[scores={musket_cd=1..}] musket_cd 1
+scoreboard players remove @a[scores={ender_cd=1..}] ender_cd 1
+scoreboard players remove @a[scores={axe_cd=1..}] axe_cd 1
 
 # sniper rifle
 execute as @a[scores={drop_sniper=1..},predicate=sp:is_sneaking] at @s anchored eyes run function sp:guns/sniper
@@ -123,3 +144,7 @@ execute as @a[gamemode=!spectator,scores={ded=1..}] run function sp:death
 
 # combos
 scoreboard players remove @a[scores={combo=1..}] combo 1
+
+# throwable axes
+execute as @e[type=minecraft:armor_stand,tag=animate] at @s run function sp:axe
+execute as @e[type=minecraft:armor_stand,tag=animate,nbt={OnGround:1b}] at @s run function sp:axe_land

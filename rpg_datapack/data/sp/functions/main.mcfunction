@@ -4,6 +4,7 @@ execute as @e[type=arrow,tag=!spball,nbt={CustomPotionEffects:[{Id:13b,Amplifier
 
 execute as @e[type=snowball,tag=spball] run function sp:vis_fix
 execute as @e[type=fireball,tag=spball] run function sp:vis_fix
+execute as @e[type=armor_stand,tag=animate] run function sp:vis_fix
 scoreboard players operation .global visfix *= .-1 visfix
 
 execute as @e[type=fireball,tag=spball,tag=spfire] run function sp:motion_fix

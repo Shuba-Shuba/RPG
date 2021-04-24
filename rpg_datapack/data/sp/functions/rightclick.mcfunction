@@ -15,8 +15,11 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11004}}} unless sc
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11005}}} if score @s rocket_cd matches 1.. run title @s actionbar ["Weapon on cooldown! Please wait ",{"score":{"name":"@s","objective":"rocket_cd"}}," ticks."]
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11005}}} unless score @s rocket_cd matches 1.. run function sp:guns/rocket
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11006}}} unless score @s arrow_cd matches 1.. run function sp:guns/archers_bane
-execute if data entity @s {SelectedItem:{tag:{CustomModelData:11015}}} unless score @s musket_cd matches 1.. run function sp:guns/musket
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11007}}} run function sp:guns/minigun
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11015}}} unless score @s musket_cd matches 1.. run function sp:guns/musket
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11020}}} unless score @s ender_cd matches 1.. run function sp:guns/ender
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11022}}} unless score @s axe_cd matches 1.. run function sp:abilities/throw
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11025}}} run function sp:guns/ultimate_ar
 
 # fireball wand
 execute if data entity @s {SelectedItem:{id:"minecraft:fire_charge"}} run function sp:abilities/launch
@@ -39,3 +42,19 @@ execute if score @s evoker_init matches 1.. run scoreboard players operation cal
 execute if score @s evoker_init matches 1.. run scoreboard players operation calc.mana evoker_init *= integers.3 calc
 execute if score @s evoker_init matches 1.. if score @s mana >= calc.mana evoker_init run scoreboard players operation tmp.mana evoker_init = @s evoker_init
 execute if score @s evoker_init matches 1.. if score @s mana >= calc.mana evoker_init run function sp:abilities/evoker_mana
+
+# summons
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11016}}} run function sp:summon/arch_polar_bear
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11016}}} run clear @s stick{CustomModelData:11016} 1
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11017}}} run function sp:summon/the_epic_one
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11017}}} run clear @s stick{CustomModelData:11017} 1
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11018}}} run function sp:summon/army_of_skeletons
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11018}}} run clear @s stick{CustomModelData:11018} 1
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11019}}} run function sp:summon/evoker_boss
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11019}}} run clear @s stick{CustomModelData:11019} 1
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11021}}} run function sp:summon/illusioner
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11021}}} run clear @s stick{CustomModelData:11021} 1
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11023}}} run function sp:summon/piglin_ruler
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11023}}} run clear @s stick{CustomModelData:11023} 1
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11024}}} run function sp:summon/amirite_boss
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11024}}} run clear @s stick{CustomModelData:11024} 1

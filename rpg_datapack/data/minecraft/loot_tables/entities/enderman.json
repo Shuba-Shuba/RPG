@@ -10,13 +10,13 @@
           "functions": [
             {
               "function": "minecraft:set_nbt",
-              "tag": "{CustomModelData:102}"
+              "tag": "{CustomModelData:103}"
             },
             {
               "function": "minecraft:set_name",
               "entity": "this",
               "name": {
-                "text": "Enderite Ingot",
+                "text": "Enderite Piece",
                 "italic": false
               }
             }
@@ -31,7 +31,7 @@
             },
             {
               "condition": "minecraft:random_chance_with_looting",
-              "chance": 0.03,
+              "chance": 0.15,
               "looting_multiplier": 0.015
             }
           ]

@@ -1,0 +1,1 @@
+give @s stick{display:{Name:'{"text":"The Ruler Of The Piglins","color":"white","italic":false}',Lore:['{"text":"Summons the ruler of the piglins","color":"white","italic":false}','{"text":"\\"Dictator AND a narcissist. Worst leader ever!\\"","color":"gray"}']},CustomModelData:11023} 1

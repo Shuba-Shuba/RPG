@@ -79,3 +79,5 @@ attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-6
 attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-7
 attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-8
 attribute @s minecraft:generic.max_health modifier remove 420-69-42-1337-9
+tag @a remove dealt
+tag @a remove user

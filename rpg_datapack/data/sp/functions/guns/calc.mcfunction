@@ -1,5 +1,5 @@
 # get armor and damage stats
-execute store result score input.armor calc run attribute @e[dx=0,limit=1,sort=nearest] generic.armor get
+execute store result score input.armor calc run attribute @s generic.armor get
 execute store result score input.damage calc if entity @p[tag=user] run data get entity @p[tag=user] SelectedItem.tag.DamageRPG
 execute as @p[tag=user] if score @s ranged_atk matches 1.. run scoreboard players operation input.damage calc += @s ranged_atk
 execute store result score input.damage calc if entity @e[tag=user,limit=1,type=!player] run data get entity @e[tag=user,limit=1] HandItems[0].tag.DamageRPG
