@@ -1,5 +1,5 @@
 playsound minecraft:entity.lightning_bolt.impact master @s ~ ~ ~ 0.5 2 0.5
-execute unless data entity @s {SelectedItem:{tag:{rpgdisplay:1}}} run item entity @s weapon.mainhand modify sp:ranged_display
+execute unless data entity @s {SelectedItem:{tag:{rpgdisplay:1}}} run item modify entity @s weapon.mainhand sp:ranged_display
 
 execute if score %5 prng2 matches 0 anchored eyes rotated ~ ~ run function sp:raycast/loop
 execute if score %5 prng2 matches 1 anchored eyes rotated ~3 ~1.5 run function sp:raycast/loop

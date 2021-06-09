@@ -8,7 +8,7 @@ execute if data entity @s {SelectedItem:{tag:{AbilityRPG:012}}} if score @s mana
 execute if data entity @s {SelectedItem:{tag:{AbilityRPG:013}}} if score @s mana matches 16.. if score @s dashtime matches 0 run xp add @s -16 points
 execute if data entity @s {SelectedItem:{tag:{AbilityRPG:013}}} if score @s mana matches 16.. if score @s dashtime matches 0 run scoreboard players set @s dashtime 16
 
-# guns
+# projectiles
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11001}}} unless score @s ar_cooldown matches 1.. run function sp:guns/rifle
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11003}}} unless score @s pistol_cd matches 1.. run function sp:guns/pistol
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11004}}} unless score @s shotgun_cd matches 1.. run function sp:guns/shotgun
@@ -20,6 +20,7 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11015}}} unless sc
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11020}}} unless score @s ender_cd matches 1.. run function sp:guns/ender
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11022}}} unless score @s axe_cd matches 1.. run function sp:abilities/throw
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11025}}} run function sp:guns/ultimate_ar
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11028}}} unless score @s portal_cd matches 1.. run function sp:guns/portal
 
 # fireball wand
 execute if data entity @s {SelectedItem:{id:"minecraft:fire_charge"}} run function sp:abilities/launch
@@ -33,7 +34,7 @@ execute if data entity @s SelectedItem.tag.ManaRelativeRPG if score @s manacoold
 execute if data entity @s SelectedItem.tag.RangedPermRPG run function sp:boost/ranged
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} store success score @s speed run attribute @s minecraft:generic.movement_speed modifier add b9611b23-9fed-4331-9d8b-a654cab9bbfa speed_booster 0.02 add
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} if score @s speed matches 1.. run tellraw @s "Boosted your movement speed. This effect is not reversible.\n\nFor admins: The UUID of the attribute modifier is [ b9611b23-9fed-4331-9d8b-a654cab9bbfa ]. It is not randomly generated on the spot, but it is hardcoded in the datapack to be that exact UUID. You can copy the UUID from your logs, or by looking at the function files."
-execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} if score @s speed matches 1.. run item entity @s weapon.mainhand replace air
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} if score @s speed matches 1.. run item replace entity @s weapon.mainhand with air
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11011}}} if score @s speed matches 0 run tellraw @s "You already have this movement speed boost!"
 
 # evoker fangs
@@ -56,5 +57,5 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11021}}} run funct
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11021}}} run clear @s stick{CustomModelData:11021} 1
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11023}}} run function sp:summon/piglin_ruler
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11023}}} run clear @s stick{CustomModelData:11023} 1
-execute if data entity @s {SelectedItem:{tag:{CustomModelData:11024}}} run function sp:summon/amirite_boss
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11024}}} run function sp:final/announce
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11024}}} run clear @s stick{CustomModelData:11024} 1

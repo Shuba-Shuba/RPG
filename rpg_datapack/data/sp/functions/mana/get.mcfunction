@@ -7,5 +7,5 @@ execute if score tmp.holding manacooldown > @s manacooldown run tellraw @s "Cann
 execute if score tmp.holding manacooldown < @s manacooldown run function sp:mana/update
 execute if score tmp.modify manacooldown >= @s manacooldown run scoreboard players set @s manacooldown 1
 execute if score tmp.modify manacooldown >= @s manacooldown run tellraw @s "Reached maximum mana restore speed, you will now generate 1 mana every tick. (20 mana/s)"
-execute if score tmp.modify manacooldown >= @s manacooldown run item entity @s weapon.mainhand replace air
+execute if score tmp.modify manacooldown >= @s manacooldown run item replace entity @s weapon.mainhand with air
 execute if score tmp.modify manacooldown < @s manacooldown run function sp:mana/modify

@@ -25,9 +25,5 @@
   "spawners": {},
   "spawn_costs": {},
   "carvers": {},
-  "features": [
-    [
-      "sp:asteroid"
-    ]
-  ]
+  "features": []
 }

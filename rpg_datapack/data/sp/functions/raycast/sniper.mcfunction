@@ -23,6 +23,7 @@ execute as @e[type=armor_stand,dx=0,limit=1,sort=nearest,tag=dummy,scores={hit=0
 execute as @e[type=armor_stand,dx=0,limit=1,sort=nearest,tag=dummy,scores={hit=0}] positioned ~-0.9 ~-0.9 ~-0.9 if entity @s[dx=0] run particle dust 1 0 0 1 ~.9 ~.9 ~.9 0.4 0.4 0.4 5 50 force @p[tag=user]
 execute as @e[type=armor_stand,dx=0,limit=1,sort=nearest,tag=dummy,scores={hit=0}] positioned ~-0.9 ~-0.9 ~-0.9 if entity @s[dx=0] positioned ~.9 ~.9 ~.9 run function damage:damage/indicator
 execute as @e[type=armor_stand,dx=0,limit=1,sort=nearest,tag=dummy,scores={hit=0}] positioned ~-0.9 ~-0.9 ~-0.9 if entity @s[dx=0] run scoreboard players set @s hit 6
+execute as @e[type=armor_stand,dx=0,limit=1,sort=nearest,tag=amirite_crystal] positioned ~-0.9 ~-0.9 ~-0.9 if entity @s[dx=0] run function sp:guns/amirite_hit
 execute if score @s raycast matches 1.. positioned ^ ^ ^0.25 if block ~ ~ ~ #sp:passthrough run function sp:raycast/sniper
 tag @s remove user
 tag @s remove dealt

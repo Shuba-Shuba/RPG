@@ -1,1 +1,1 @@
-summon zombie ~ ~ ~ {CustomNameVisible:1b,CustomName:'"Amirite Boss Placeholder"',Attributes:[{Name:"generic.max_health",Base:100}],Health:100f,DeathLootTable:"sp:amirite_boss"}
+summon vindicator ~ ~ ~ {CustomNameVisible:1b,DeathLootTable:"sp:amirite_boss",Health:200f,Tags:["amirite_boss"],CustomName:'{"text":"Amirite Boss"}',HandItems:[{id:'minecraft:stick',Count:1b,tag:{CustomModelData:11015,DamageRPG:18}},{}],Attributes:[{Name:generic.max_health,Base:200},{Name:generic.attack_damage,Base:8},{Name:generic.armor,Base:25},{Name:generic.follow_range,Base:64}]}

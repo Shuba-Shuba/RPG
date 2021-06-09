@@ -38,6 +38,8 @@
       "minecraft:ore_granite",
       "minecraft:ore_diorite",
       "minecraft:ore_andesite",
+      "minecraft:ore_tuff",
+      "minecraft:ore_deepslate",
       "minecraft:ore_coal",
       "minecraft:ore_iron",
       "minecraft:ore_gold",
@@ -49,7 +51,10 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [],
+    [
+      "minecraft:rare_dripstone_cluster",
+      "minecraft:rare_small_dripstone"
+    ],
     [
       "minecraft:patch_large_fern",
       "minecraft:glow_lichen",

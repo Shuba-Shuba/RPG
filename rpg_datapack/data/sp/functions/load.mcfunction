@@ -5,6 +5,9 @@ scoreboard players add cleargive.enabled config 0
 scoreboard players add upgrade.protection config 0
 scoreboard players add upgrade.thorns config 0
 scoreboard players add generic.used config 0
+scoreboard players add portals.universal config 0
+scoreboard players add portals.non_players config 0
+scoreboard players add portals.owner_only config 0
 
 tellraw @a "Reloaded."
 execute unless score generic.used config matches 1 run tellraw @a [{"text":"It looks like this is your first time loading this datapack. To properly set up RPG, "},{"text":"click here.","underlined":true,"clickEvent":{"action":"run_command","value":"/function sp:reset_config"},"hoverEvent":{"action":"show_text","value":"/function sp:reset_config"}}," If you know what you are doing, then ignore this message."]
@@ -58,7 +61,7 @@ scoreboard objectives add manacap dummy
 execute in sp:void run forceload add 0 0
 scoreboard objectives add ar_cooldown dummy
 scoreboard objectives add damage dummy
-scoreboard objectives add health health
+scoreboard objectives add health dummy
 scoreboard objectives add pistol_cd dummy
 scoreboard objectives add shotgun_cd dummy
 scoreboard objectives add rocket_cd dummy
@@ -129,3 +132,10 @@ bossbar set rpg:piglin color red
 bossbar set rpg:piglin visible false
 scoreboard objectives add dash_charge dummy
 scoreboard objectives add shieldtime dummy
+bossbar add rpg:amirite "Amirite Boss"
+bossbar set rpg:amirite max 200
+bossbar set rpg:amirite color red
+bossbar set rpg:amirite visible false
+scoreboard objectives add portal_cd dummy
+scoreboard objectives add portal_entry_cd dummy
+scoreboard objectives add final dummy

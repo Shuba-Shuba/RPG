@@ -4,8 +4,9 @@
   "predicate": {
     "equipment": {
       "offhand": {
-        "item": "minecraft:carrot_on_a_stick",
-        "count": 1
+        "items": [
+          "minecraft:carrot_on_a_stick"
+        ]
       }
     }
   }

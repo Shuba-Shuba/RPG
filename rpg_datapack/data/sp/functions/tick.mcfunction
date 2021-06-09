@@ -1,3 +1,4 @@
+execute as @e store result score @s health run data get entity @s Health 1
 execute as @e[scores={dashtime=1..}] at @s rotated ~ 0 if block ^ ^ ^1 #sp:passthrough if block ^ ^ ^2 #sp:passthrough if block ^ ^ ^3 #sp:passthrough run function sp:abilities/dash
 execute as @e[scores={dashtime=1..}] at @s rotated ~ 0 unless block ^ ^ ^1 #sp:passthrough unless block ^ ^ ^2 #sp:passthrough unless block ^ ^ ^3 #sp:passthrough run scoreboard players set @s dashtime 0
 execute as @a[predicate=!sp:carrot_on_a_stick_in_offhand] at @s run function sp:offhand_check
@@ -96,6 +97,17 @@ scoreboard players add %60s rpg_time 1
 execute if score %60s rpg_time matches 800.. run function sp:60s
 execute if score %60s rpg_time matches 800.. run scoreboard players set %60s rpg_time 0
 
+# amirite boss (final boss)
+execute as @e[type=item,nbt={Item:{id:"minecraft:copper_ingot",tag:{CustomModelData:101}}}] if entity @s if score %index final matches ..3 run tellraw @a "The amirite boss has died prematurely. bruh moment. Or alternatively, you threw amirite on the ground in the arena. If that is the case, stop doing it because you will NOT get it back!"
+execute as @e[type=item,nbt={Item:{id:"minecraft:copper_ingot",tag:{CustomModelData:101}}}] if entity @s if score %index final matches ..3 run kill @s
+bossbar set rpg:amirite players @a
+execute store result bossbar rpg:amirite value run data get entity @e[tag=amirite_boss,limit=1] Health
+execute if entity @e[tag=amirite_boss,limit=1] run bossbar set rpg:amirite visible true
+execute unless entity @e[tag=amirite_boss,limit=1] run bossbar set rpg:amirite visible false
+execute as @e[tag=amirite_boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run scoreboard players set %index final 0
+execute as @e[tag=amirite_boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run tp @s 0 -100 0
+execute as @e[tag=amirite_boss,limit=1] at @s unless entity @a[distance=..64,gamemode=!spectator] run kill @s
+
 # arch polar bear spawning
 execute as @e[type=polar_bear,tag=!rpg_verified,tag=!arch_polar_bear] at @s run function sp:verify/polar_bear
 
@@ -132,6 +144,8 @@ scoreboard players remove @a[scores={arrow_cd=1..}] arrow_cd 1
 scoreboard players remove @a[scores={musket_cd=1..}] musket_cd 1
 scoreboard players remove @a[scores={ender_cd=1..}] ender_cd 1
 scoreboard players remove @a[scores={axe_cd=1..}] axe_cd 1
+scoreboard players remove @a[scores={portal_cd=1..}] portal_cd 1
+scoreboard players remove @e[scores={portal_entry_cd=1..}] portal_entry_cd 1
 
 # sniper rifle
 execute as @a[scores={drop_sniper=1..},predicate=sp:is_sneaking] at @s anchored eyes run function sp:guns/sniper
@@ -148,3 +162,24 @@ scoreboard players remove @a[scores={combo=1..}] combo 1
 # throwable axes
 execute as @e[type=minecraft:armor_stand,tag=animate] at @s run function sp:axe
 execute as @e[type=minecraft:armor_stand,tag=animate,nbt={OnGround:1b}] at @s run function sp:axe_land
+
+# portals
+scoreboard players add @e portal_entry_cd 0
+execute if score portals.owner_only config matches 1 as @e[type=marker,tag=portal_blue] at @s as @a[distance=..1,scores={portal_entry_cd=0}] if score @s UUID0 = @e[type=marker,tag=portal_blue,limit=1,sort=nearest] UUID0 if score @s UUID1 = @e[type=marker,tag=portal_blue,limit=1,sort=nearest] UUID1 if score @s UUID2 = @e[type=marker,tag=portal_blue,limit=1,sort=nearest] UUID2 if score @s UUID3 = @e[type=marker,tag=portal_blue,limit=1,sort=nearest] UUID3 as @e[type=marker,tag=portal_blue,limit=1,sort=nearest] run function sp:portal/enter_blue
+execute if score portals.owner_only config matches 0 as @e[type=marker,tag=portal_blue] at @s if entity @a[distance=..1,scores={portal_entry_cd=0}] run function sp:portal/enter_blue
+execute if score portals.owner_only config matches 1 as @e[type=marker,tag=portal_orange] at @s as @a[distance=..1,scores={portal_entry_cd=0}] if score @s UUID0 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID0 if score @s UUID1 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID1 if score @s UUID2 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID2 if score @s UUID3 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID3 as @e[type=marker,tag=portal_orange,limit=1,sort=nearest] run function sp:portal/enter_orange
+execute if score portals.owner_only config matches 0 as @e[type=marker,tag=portal_orange] at @s if entity @a[distance=..1,scores={portal_entry_cd=0}] run function sp:portal/enter_orange
+execute as @e[type=marker,tag=portal_blue] at @s run particle dust 0 0 1 1 ~ ~1 ~ 0.3 0.7 0.3 0 30 normal @a
+execute as @e[type=marker,tag=portal_orange] at @s run particle dust 1 0.65 0.3 1 ~ ~1 ~ 0.3 0.7 0.3 0 30 normal @a
+
+# amirite boss
+execute store result score %crystals final if entity @e[type=armor_stand,tag=amirite_crystal,limit=8]
+execute store result score @e[tag=amirite_boss] dynamic_health run data get entity @e[tag=amirite_boss,limit=1] Health 1
+execute unless score %crystals final matches 0 unless score @e[tag=amirite_boss,limit=1] dynamic_health matches 50.. run data merge entity @e[tag=amirite_boss,limit=1] {Health:50f}
+execute as @e[tag=amirite_boss] at @s if score %index final matches 3.. run particle minecraft:enchanted_hit ~ ~ ~ 0.5 1 0.5 0 10 normal @a
+execute in sp:void as @e[type=item,nbt={Item:{id:"minecraft:copper_ingot",tag:{CustomModelData:101}}}] at @s if entity @a[distance=..64] if score %index final matches 4.. run function sp:final/end
+
+# homing projectiles (from cloud wolf)
+execute as @e[tag=missile] at @s anchored eyes facing entity @p[distance=..48] eyes positioned ^ ^ ^2 rotated as @s positioned ^ ^ ^5 facing entity @s eyes facing ^ ^ ^-1 positioned as @s run tp @s ^ ^ ^0.35 ~ ~
+execute as @e[tag=missile] at @s anchored eyes if entity @a[distance=..1] positioned ~ ~2 ~ run function sp:landed
+execute as @e[tag=missile] at @s anchored eyes unless block ^ ^ ^ air run kill @s

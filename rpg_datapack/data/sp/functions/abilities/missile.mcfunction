@@ -1,0 +1,2 @@
+execute anchored eyes run summon minecraft:armor_stand ~ ~ ~ {Tags:["missile"],NoGravity:1b,Invisible:1b,Invulnerable:1b,ArmorItems:[{},{},{},{id:"minecraft:tnt",Count:1b}]}
+playsound minecraft:entity.zombie.attack_wooden_door master @a[distance=..16] ~ ~ ~ 1 0

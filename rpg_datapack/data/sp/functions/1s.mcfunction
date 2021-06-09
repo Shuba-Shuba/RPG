@@ -17,3 +17,18 @@ execute as @e[type=piglin_brute,tag=boss] at @s as @e[type=zombified_piglin,dist
 scoreboard players remove @a[scores={ded_timer=0..}] ded_timer 1
 title @a[scores={ded_timer=0..}] title {"color":"red","score":{"name":"*","objective":"ded_timer"}}
 execute as @a[scores={ded_timer=0}] run function sp:respawn
+
+# amirite boss stage 1
+execute as @e[tag=amirite_boss,limit=1] store result score @s dynamic_health run data get entity @s Health 1
+scoreboard players operation @e[tag=amirite_boss,limit=1] dynamic_health += %crystals final
+execute as @e[tag=amirite_boss,limit=1] store result entity @s Health float 1 run scoreboard players get @s dynamic_health
+execute if score %crystals final matches 0 if score %index final matches 2 if score @e[tag=amirite_boss,limit=1] dynamic_health matches ..100 run function sp:final/stage_2
+
+# amirite boss stage 2
+execute if score %index final matches 3.. as @e[tag=amirite_boss,limit=1] store result score @s dynamic_health run data get entity @s Health 1
+execute if score %index final matches 3.. run scoreboard players add @e[tag=amirite_boss,limit=1] dynamic_health 3
+execute if score %index final matches 3.. as @e[tag=amirite_boss,limit=1] store result entity @s Health float 1 run scoreboard players get @s dynamic_health
+execute as @e[tag=amirite_boss] at @s run scoreboard players set @s raycast 128
+execute as @e[tag=amirite_boss] at @s anchored eyes run function sp:raycast/non_player
+execute as @e[tag=amirite_boss] at @s run playsound minecraft:entity.lightning_bolt.impact master @a[distance=..12,gamemode=survival] ~ ~ ~ 0.5 2
+execute if score %crystals final matches 0 if score %index final matches 3 if score @e[tag=amirite_boss,limit=1] dynamic_health matches ..50 run function sp:final/stage_3

@@ -93,6 +93,18 @@
                 "custom_model_data" : 11015
             },
             "model": "item/musket"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11026
+            },
+            "model": "item/rocket"
+        },
+        {
+            "predicate": {
+                "custom_model_data" : 11027
+            },
+            "model": "item/rocket_jumper"
         }
     ]
 }
