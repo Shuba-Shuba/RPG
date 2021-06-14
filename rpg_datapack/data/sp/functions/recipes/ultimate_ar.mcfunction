@@ -3,7 +3,7 @@ item replace block ~ ~ ~ container.0 with air
 item replace block ~ ~ ~ container.1 with air
 item replace block ~ ~ ~ container.2 with air
 item replace block ~ ~ ~ container.3 with air
-item replace block ~ ~ ~ container.4 with stick{display:{Name:'{"text":"[ The Ultimate Assault Rifle ]","color":"aqua","bold":true,"italic":false,"underlined":true}',Lore:['{"text":"Does Not Require Ammo","color":"white","italic":false}','{"text":"Extremely High Fire Rate","color":"white","italic":false}','{"text":"Long Range","color":"white","italic":false}','{"text":"\\"They say it\'s worth a billion bucks.","color":"gray"}','{"text":"I wouldn\'t sell it for a trillion.\\"","color":"gray"}']},CustomModelData:11025,DamageRPG:12}
+item replace block ~ ~ ~ container.4 with stick{display:{Name:'{"text":"Rapid Rocket Launcher","color":"white","italic":false}',Lore:['{"text":"Medium Range","color":"white","italic":false}','{"text":"Extremely High Fire Rate","color":"white","italic":false}','{"text":"65 Splash Damage","color":"white","italic":false}','{"text":"Does Not Require Ammo","color":"white","italic":false}','{"text":"\\"That\'s not a nuclear option; THIS is!\\"","color":"gray"}']},CustomModelData:11027}
 item replace block ~ ~ ~ container.5 with air
 item replace block ~ ~ ~ container.6 with air
 item replace block ~ ~ ~ container.7 with air

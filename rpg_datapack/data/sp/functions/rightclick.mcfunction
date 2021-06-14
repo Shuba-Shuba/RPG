@@ -20,6 +20,7 @@ execute if data entity @s {SelectedItem:{tag:{CustomModelData:11015}}} unless sc
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11020}}} unless score @s ender_cd matches 1.. run function sp:guns/ender
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11022}}} unless score @s axe_cd matches 1.. run function sp:abilities/throw
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11025}}} run function sp:guns/ultimate_ar
+execute if data entity @s {SelectedItem:{tag:{CustomModelData:11027}}} run function sp:guns/rapid_rocket
 execute if data entity @s {SelectedItem:{tag:{CustomModelData:11028}}} unless score @s portal_cd matches 1.. run function sp:guns/portal
 
 # fireball wand
