@@ -1,3 +1,3 @@
 execute if score cleargive.enabled config matches 1 run clear @s
-give @s spyglass{display:{Name:'{"text":"Sniper Rifle","italic":false}',Lore:['{"text":"Long Range","color":"white","italic":false}','{"text":"Pierces Targets","color":"white","italic":false}','{"text":"dont ask why its only a scope","color":"gray","italic":true}','{"text":"40 Piercing Damage","color":"white","italic":false}']},CustomModelData:11006,DamageRPG:40,rpgdisplay:1}
+give @s spyglass{display:{Name:'{"text":"Sniper Rifle","italic":false}',Lore:['{"text":"Long Range","color":"white","italic":false}','{"text":"Pierces Targets","color":"white","italic":false}','{"text":"dont ask why its only a scope","color":"gray","italic":true}','{"text":"40 Piercing Damage","color":"white","italic":false}']},CustomModelData:11029,DamageRPG:40,rpgdisplay:1}
 give @s iron_nugget 64

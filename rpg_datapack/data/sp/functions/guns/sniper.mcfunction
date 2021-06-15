@@ -1,4 +1,4 @@
-data merge entity @e[type=item,limit=1,sort=nearest,nbt={Item:{tag:{CustomModelData:11006}}}] {PickupDelay:0,Tags:["user"]}
+data merge entity @e[type=item,limit=1,sort=nearest,nbt={Item:{tag:{CustomModelData:11029}}}] {PickupDelay:0,Tags:["user"]}
 scoreboard players set @s raycast 2048
 execute store result score @s ammo run clear @s iron_nugget 0
 execute if score @s ammo matches 1.. unless score @s sniper_cd matches 1.. unless score gungame.infinite_ammo config matches 1 run playsound minecraft:entity.lightning_bolt.impact master @s ~ ~ ~ 0.5 2 0.5
