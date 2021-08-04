@@ -139,3 +139,4 @@ bossbar set rpg:amirite visible false
 scoreboard objectives add portal_cd dummy
 scoreboard objectives add portal_entry_cd dummy
 scoreboard objectives add final dummy
+scoreboard objectives add gamerule dummy
