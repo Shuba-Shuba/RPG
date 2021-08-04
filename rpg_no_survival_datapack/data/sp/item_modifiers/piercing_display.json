@@ -1,0 +1,26 @@
+[
+  {
+    "function": "minecraft:set_nbt",
+    "tag": "{rpgdisplay:1}"
+  },
+  {
+    "function": "minecraft:set_lore",
+    "entity": "this",
+    "lore": [
+      [
+        {
+          "score": {
+            "name": "@s",
+            "objective": "atk"
+          },
+          "color": "white",
+          "italic": false
+        },
+        {
+          "text": " Piercing Damage"
+        }
+      ]
+    ],
+    "replace": false
+  }
+]

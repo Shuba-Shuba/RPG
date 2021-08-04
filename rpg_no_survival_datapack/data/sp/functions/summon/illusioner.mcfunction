@@ -1,0 +1,1 @@
+summon illusioner ~ ~ ~ {Health:50f,PatrolLeader:0b,Patrolling:1b,HandItems:[{id:"minecraft:bow",Count:1b,tag:{Unbreakable:1b,Enchantments:[{id:"minecraft:power",lvl:6s}]}},{}],HandDropChances:[0.200F,0.085F],Attributes:[{Name:generic.max_health,Base:50},{Name:generic.armor,Base:20}]}

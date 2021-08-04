@@ -1,0 +1,17 @@
+[
+  {
+    "function": "minecraft:set_enchantments",
+    "enchantments": {
+      "minecraft:protection": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "upgrade.protection"
+        },
+        "score": "config",
+        "scale": 1
+      }
+    },
+    "add": true
+  }
+]

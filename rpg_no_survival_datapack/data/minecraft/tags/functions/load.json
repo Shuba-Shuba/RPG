@@ -1,0 +1,8 @@
+{
+  "values":[
+	"sp:init",
+	"sp:load",
+	"sp:rng/load",
+	"damage:damage/load"
+  ]
+}

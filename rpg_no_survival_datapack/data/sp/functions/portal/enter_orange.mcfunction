@@ -1,0 +1,5 @@
+# search for opposite portal
+scoreboard players set @e[distance=..1] portal_entry_cd 20
+execute if score portals.universal config matches 1 run tp @a[distance=..1] @e[type=marker,tag=portal_blue,limit=1]
+execute if score portals.universal config matches 0 if score portals.non_players config matches 0 as @e[type=marker,tag=portal_blue] if score @s UUID0 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID0 if score @s UUID1 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID1 if score @s UUID2 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID2 if score @s UUID3 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID3 run tp @a[distance=..1] @s
+execute if score portals.universal config matches 0 if score portals.non_players config matches 1 as @e[type=marker,tag=portal_blue] if score @s UUID0 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID0 if score @s UUID1 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID1 if score @s UUID2 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID2 if score @s UUID3 = @e[type=marker,tag=portal_orange,limit=1,sort=nearest] UUID3 run tp @e[distance=..1] @s

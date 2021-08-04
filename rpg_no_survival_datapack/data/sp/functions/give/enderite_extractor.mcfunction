@@ -1,0 +1,2 @@
+give @s stick{CustomModelData:11020,display:{Name:'{"text":"Enderite Extractor","italic":false}',Lore:['{"text":"Only hits endermen, and will have a","color":"gray"}','{"text":"5% chance to drop enderite on death.","color":"gray"}','{"text":"Medium Range","color":"white","italic":false}']},DamageRPG:10}
+give @s iron_nugget 256
