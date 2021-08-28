@@ -13,6 +13,10 @@ tellraw @a "Reloaded."
 execute unless score generic.used config matches 1 run tellraw @a [{"text":"It looks like this is your first time loading this datapack. To properly set up RPG, "},{"text":"click here.","underlined":true,"clickEvent":{"action":"run_command","value":"/function sp:reset_config"},"hoverEvent":{"action":"show_text","value":"/function sp:reset_config"}}," If you know what you are doing, then ignore this message."]
 scoreboard objectives add rpg_time dummy
 scoreboard objectives add epic_boss_info dummy
+scoreboard objectives add sourceUUID0 dummy
+scoreboard objectives add sourceUUID1 dummy
+scoreboard objectives add sourceUUID2 dummy
+scoreboard objectives add sourceUUID3 dummy
 bossbar add rpg:the_epic_one "The Epic One"
 bossbar set rpg:the_epic_one max 100
 bossbar set rpg:the_epic_one color red

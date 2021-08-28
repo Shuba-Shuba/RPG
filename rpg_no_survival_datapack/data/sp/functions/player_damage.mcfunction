@@ -1,9 +1,12 @@
 # initial setup
+function sp:source_search
 execute if score @s damage >= @s health run gamerule showDeathMessages false
 execute if score @s damage >= @s health if entity @e[tag=dealt] run tellraw @a ["",{"selector":"@e[tag=dealt]"}," pwn'd ",{"selector":"@s"}]
-execute if score @s damage >= @s health unless entity @e[tag=dealt] run tellraw @a ["",{"selector":"@s"}," commited die, this is a sad gamer moment"]
+execute if score @s damage >= @s health if entity @e[tag=dealt] run scoreboard players set @e[tag=dealt,tag=sentry] sentry_kill 1
+execute if score @s damage >= @s health unless entity @e[tag=dealt] run tellraw @a ["",{"selector":"@s"}," commited die, this is a sad gamer moment (no killer detected)"]
 execute if score @s damage >= @s health run kill @s
 execute if score @s damage >= @s health run scoreboard players add @a[tag=dealt] kill 1
+execute if score @s damage >= @s health run scoreboard players add @a[tag=dealt] Kills 1
 execute if score @s damage >= @s health run gamerule showDeathMessages true
 execute store result score calc.max_hp damage run attribute @s minecraft:generic.max_health get
 scoreboard players operation calc.hp damage = @s health
