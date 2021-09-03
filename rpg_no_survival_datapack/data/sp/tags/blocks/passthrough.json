@@ -10,6 +10,14 @@
 		"minecraft:tall_grass",
 		"minecraft:ladder",
 		"#minecraft:flowers",
-		"minecraft:vine"
+		"minecraft:vine",
+		"#minecraft:climbable",
+		"#minecraft:fences",
+		"minecraft:iron_door",
+		"#minecraft:carpets",
+		"#minecraft:slabs",
+		"#minecraft:signs",
+		"#minecraft:wall_signs",
+		"minecraft:fire"
 	]
 }
